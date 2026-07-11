@@ -24,17 +24,52 @@ Configuration-driven and designed for reproducible experiments.
     cd PRO_BUG
 
 ### 2) Install
+    pip install -r requirements.txt
+    pip install -U -q transformers accelerate bitsandbytes
 
-    python -m venv .venv
-    .venv\Scripts\activate   # Windows
-    pip install -U pip
-    pip install torch transformers datasets pyyaml scikit-learn
+### 3) Pre-Proprocessing 
+   python src/02_prepare_dataset.py \
+  --config configs/eclipse.yaml \
+  --outdir workdir/outputs/mozilla
 
-### 3) Generate Synthetic Data (PRO_BUG)
+### 4) Generate Synthetic Data (PRO_BUG)
 
     python src/02_generate_aug.py   --config configs/mozilla.yaml   --workdir workdir   --mode m2
+    %%bash
+    set +e
+    set -x
+    
+    for r in r25 r50; do
+      echo "=============================="
+      echo "RUNNING: ratio=$r (m2)"
+      echo "=============================="
+    
+      file="workdir/outputs/mozilla/augmented/m2_${r}.jsonl"
+    
+      if [ ! -s "$file" ]; then
+        echo "SKIPPING ratio=$r because $file is missing or empty"
+        continue
+      fi
+    
+      python -u src/03_train_eval.py \
+        --config configs/mozilla.yaml \
+        --workdir workdir/outputs/mozilla \
+        --mode m2 \
+        --ratio "$r" \
+        --models LinearSVC ClassWeightedSVC LogisticRegression CodeBERT BiLSTM CNN \
+        --synthetic_weight 0.3 \
+        --resume 0
+    
+      code=$?
+      echo "EXIT CODE for ratio=$r: $code"
+    
+      if [ $code -ne 0 ]; then
+        echo "FAILED at ratio=$r"
+        break
+      fi
+      
 
-### 4) Train & Evaluate
+### 5) Train & Evaluate
 
     python src/03_train_eval.py   --config configs/mozilla.yaml   --workdir workdir   --mode m2
 
