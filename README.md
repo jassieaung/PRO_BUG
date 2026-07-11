@@ -29,7 +29,7 @@ Configuration-driven and designed for reproducible experiments.
 
 ### 3) Pre-Proprocessing 
    python src/02_prepare_dataset.py \
-  --config configs/eclipse.yaml \
+  --config configs/mozilla.yaml \
   --outdir workdir/outputs/mozilla
 
 ### 4) Generate Synthetic Data (PRO_BUG)
