@@ -1,0 +1,93 @@
+{
+  "mode": "m2",
+  "ratio": "r50",
+  "models": {
+    "ClassWeightedSVC": {
+      "accuracy": 0.7420535296370367,
+      "macro_avg": {
+        "precision": 0.30727461088746805,
+        "recall": 0.45069016035123466,
+        "f1-score": 0.3507358863445268,
+        "support": 23501.0
+      },
+      "weighted_avg": {
+        "precision": 0.8449974067389212,
+        "recall": 0.7420535296370367,
+        "f1-score": 0.7616308716327763,
+        "support": 23501.0
+      },
+      "top_k": {}
+    },
+    "LogisticRegression": {
+      "accuracy": 0.8350708480490192,
+      "macro_avg": {
+        "precision": 0.3952357030556458,
+        "recall": 0.2853140285141631,
+        "f1-score": 0.3174298571628936,
+        "support": 23501.0
+      },
+      "weighted_avg": {
+        "precision": 0.8101200768408113,
+        "recall": 0.8350708480490192,
+        "f1-score": 0.8103632200842138,
+        "support": 23501.0
+      },
+      "top_k": {}
+    },
+    "CodeBERT": {
+      "accuracy": 0.803126067646054,
+      "macro_avg": {
+        "precision": 0.48228661199857314,
+        "recall": 0.40753679567985246,
+        "f1-score": 0.42355214059019547,
+        "support": 23416.0
+      },
+      "weighted_avg": {
+        "precision": 0.7945221628889084,
+        "recall": 0.803126067646054,
+        "f1-score": 0.7900234065909096,
+        "support": 23416.0
+      },
+      "top_k": {
+        "top_1_accuracy": 0.803126067646054,
+        "top_3_accuracy": 0.8854202254868466,
+        "top_5_accuracy": 0.9057909121967885
+      }
+    },
+    "BiLSTM": {
+      "accuracy": 0.8325503928937479,
+      "macro_avg": {
+        "precision": 0.496223815364738,
+        "recall": 0.4368747069117016,
+        "f1-score": 0.4478038892760703,
+        "support": 23416.0
+      },
+      "weighted_avg": {
+        "precision": 0.8286495479934356,
+        "recall": 0.8325503928937479,
+        "f1-score": 0.8225371124355562,
+        "support": 23416.0
+      },
+      "top_k": {}
+    },
+    "CNN": {
+      "accuracy": 0.8217458148274684,
+      "macro_avg": {
+        "precision": 0.4922886006035013,
+        "recall": 0.4765118136873246,
+        "f1-score": 0.4644844767299918,
+        "support": 23416.0
+      },
+      "weighted_avg": {
+        "precision": 0.8231613461804435,
+        "recall": 0.8217458148274684,
+        "f1-score": 0.8164512203373261,
+        "support": 23416.0
+      },
+      "top_k": {}
+    }
+  },
+  "aug_only": false,
+  "synthetic_rows": 113,
+  "synthetic_weight": 0.3
+}

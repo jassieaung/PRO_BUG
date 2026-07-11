@@ -1,0 +1,25 @@
+{
+  "mode": "m2",
+  "ratio": "r25",
+  "model": "CNN",
+  "accuracy": 0.6641083521444695,
+  "macro_avg": {
+    "precision": 0.344269970863389,
+    "recall": 0.3473709036402171,
+    "f1-score": 0.3296307862834804,
+    "support": 2215.0
+  },
+  "weighted_avg": {
+    "precision": 0.6281926882881627,
+    "recall": 0.6641083521444695,
+    "f1-score": 0.6317785248171953,
+    "support": 2215.0
+  },
+  "top_k": {},
+  "train_rows": 18310,
+  "test_rows": 2269,
+  "aug_only": false,
+  "smote_target_count": null,
+  "synthetic_weight": 0.3,
+  "synthetic_rows": 162
+}

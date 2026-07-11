@@ -1,0 +1,25 @@
+{
+  "mode": "m1",
+  "ratio": null,
+  "model": "LinearSVC",
+  "accuracy": 0.6751873071837814,
+  "macro_avg": {
+    "precision": 0.3477219816120232,
+    "recall": 0.34548277467560273,
+    "f1-score": 0.3304985131945604,
+    "support": 2269.0
+  },
+  "weighted_avg": {
+    "precision": 0.6203672871314453,
+    "recall": 0.6751873071837814,
+    "f1-score": 0.6277863880076915,
+    "support": 2269.0
+  },
+  "top_k": {},
+  "train_rows": 18148,
+  "test_rows": 2269,
+  "aug_only": false,
+  "smote_target_count": null,
+  "synthetic_weight": null,
+  "synthetic_rows": null
+}

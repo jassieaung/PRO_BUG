@@ -1,0 +1,29 @@
+{
+  "mode": "m2",
+  "ratio": "r25",
+  "model": "CodeBERT",
+  "accuracy": 0.5164785553047404,
+  "macro_avg": {
+    "precision": 0.0919664429808515,
+    "recall": 0.12008450661960983,
+    "f1-score": 0.09504241911117696,
+    "support": 2215.0
+  },
+  "weighted_avg": {
+    "precision": 0.3831860842605172,
+    "recall": 0.5164785553047404,
+    "f1-score": 0.42395340493532385,
+    "support": 2215.0
+  },
+  "top_k": {
+    "top_1_accuracy": 0.5164785553047404,
+    "top_3_accuracy": 0.6347629796839729,
+    "top_5_accuracy": 0.6803611738148985
+  },
+  "train_rows": 18310,
+  "test_rows": 2269,
+  "aug_only": false,
+  "smote_target_count": null,
+  "synthetic_weight": 0.3,
+  "synthetic_rows": 162
+}
