@@ -1,0 +1,13 @@
+numpy
+pandas
+tqdm
+requests
+scikit-learn
+torch
+transformers>=4.35
+datasets>=2.14
+sentence-transformers
+faiss-cpu
+pyyaml
+accelerate
+bitsandbytes
