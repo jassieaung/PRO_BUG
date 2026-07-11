@@ -20,7 +20,7 @@ Configuration-driven and designed for reproducible experiments.
 
 ### 1) Clone
 
-    git clone https://github.com/projectanonymous456/PRO_BUG.git
+    git clone https://github.com/jassieaung/PRO_BUG.git
     cd PRO_BUG
 
 ### 2) Install
