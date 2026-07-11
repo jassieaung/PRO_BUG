@@ -1,0 +1,56 @@
+dataset:
+  input_json: "/content/drive/MyDrive/pro_bug/data/eclipse_bug_reports.json"
+  json_lines: false
+  status_keep: [RESOLVED, VERIFIED]
+
+  columns:
+    id: "Bug ID"
+    summary: "Summary"
+    comments: "Consolidated Comments"
+    label: "Assignee_To"
+    status: "Status"
+
+  split:
+    seed: 42
+    train: 0.8
+    val: 0.1
+    test: 0.1
+
+dedup:
+  enabled: true
+  key_fields: ["Summary"]
+
+retriever:
+  emb_model: BAAI/bge-base-en-v1.5
+  index_type: hnsw
+  top_k: 5
+  snippet_chars: 300
+
+augment:
+  # Synthetic ratio controls TOTAL synthetic volume for BOTH M2 and M3:
+  # syn / (orig + syn)
+ 
+
+  # Synthetic ratio is defined as:
+  #   syn / (orig + syn)
+  syn_ratios: [0.05, 0.10, 0.25, 0.50]
+
+  # Minority definition
+  minority_policy: median        # median-based minority (recommended)
+  minority_threshold: 10          # used only if policy=threshold
+
+  # Safety caps (CRITICAL for stability)
+  max_syn_per_label: 20         # avoid single-label explosion
+  max_total_syn_per_ratio: 8000 # HARD CAP to prevent OOM at high ratios
+
+generator:
+  model: mistralai/Mistral-7B-Instruct-v0.2
+  max_new_tokens: 96
+  temperature: 0.8
+  top_k: 50
+  top_p: 0.95
+  seed: 42
+
+tfidf:
+  max_features: 30000
+  dtype: float32
