@@ -1,4 +1,4 @@
-# PRO_BUG -- Prompt-Based Synthetic Augmentation
+# TriageTailor -- Adaptive Synthetic Augmentation  for Long-Tailed Bug Triage
 
 Minimal experimental pipeline for prompt-only synthetic data generation
 (PRO_BUG).\
@@ -8,7 +8,7 @@ Configuration-driven and designed for reproducible experiments.
 
 ## 📁 Structure
 
-    PRO_BUG/
+    TriageTailor/
     ├── src/        # Core scripts
     ├── configs/    # YAML experiment configs
     ├── data/       # Download separately (Zenodo)
@@ -20,8 +20,8 @@ Configuration-driven and designed for reproducible experiments.
 
 ### 1) Clone
 
-    git clone https://github.com/jassieaung/PRO_BUG.git
-    cd PRO_BUG
+    git clone https://github.com/jassieaung/TriageTailor.git
+    cd TriageTailor
 
 ### 2) Install
     pip install -r requirements.txt
@@ -32,7 +32,8 @@ Configuration-driven and designed for reproducible experiments.
   --config configs/mozilla.yaml \
   --outdir workdir/outputs/mozilla
 
-### 4) Generate Synthetic Data (PRO_BUG)
+### 4) Generate Synthetic Data (TriageTailor
+)
 
     python src/02_generate_aug.py   --config configs/mozilla.yaml   --workdir workdir   --mode m2
     %%bash
