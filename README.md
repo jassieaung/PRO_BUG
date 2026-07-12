@@ -1,7 +1,7 @@
 # TriageTailor -- Adaptive Synthetic Augmentation  for Long-Tailed Bug Triage
 
 Minimal experimental pipeline for prompt-only synthetic data generation
-(PRO_BUG).\
+(TriageTailor).\
 Configuration-driven and designed for reproducible experiments.
 
 ------------------------------------------------------------------------
