@@ -4,7 +4,7 @@
 
 Clean two-mode experimental setup:
 - M1 is the baseline and does not require this script.
-- M2 is PRO_BUG synthetic augmentation, renamed from the previous improved M4.
+- M2 is TriageTailor synthetic augmentation, renamed from the previous improved M4.
 
 This script generates only M2 files:
     <workdir>/augmented/m2_r05.jsonl
@@ -74,9 +74,9 @@ def setup_logger(workdir: str) -> logging.Logger:
     log_dir = Path(workdir) / "logs"
     log_dir.mkdir(parents=True, exist_ok=True)
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_file = log_dir / f"generate_m2_probug_{ts}.log"
+    log_file = log_dir / f"generate_m2_triagetailor_{ts}.log"
 
-    logger = logging.getLogger("generate_m2_probug")
+    logger = logging.getLogger("generate_m2_triagetailor")
     logger.setLevel(logging.INFO)
     logger.handlers.clear()
 
